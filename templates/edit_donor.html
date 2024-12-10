@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Edit Donor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+
+    <h1>Edit Donor Information</h1>
+    <form method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" value="{{ donor.email }}" required>
+        </div>
+        <div class="form-group">
+            <label>Phone No</label>
+            <input type="text" class="form-control" name="phno" value="{{ donor.phno }}" required>
+        </div>
+        <div class="form-group">
+            <label>Blood Group</label>
+            <input type="text" class="form-control" name="blood_group" value="{{ donor.blood_group }}" required>
+      <div class="form-group">
+            <label for="last_donated">Last Donated:</label>
+            <input type="date" name="last_donated" value="{{ donor.last_donated }}" required class="form-control">
+        </div>     </div>
+     
+        <div class="form-group">
+            <label>Weight</label>
+            <input type="text" class="form-control" name="weight" value="{{ donor.weight }}" required>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select class="form-control" name="gender" required>
+                <option value="Male" {% if donor.gender == 'Male' %} selected {% endif %}>Male</option>
+                <option value="Female" {% if donor.gender == 'Female' %} selected {% endif %}>Female</option>
+                <option value="Other" {% if donor.gender == 'Other' %} selected {% endif %}>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" name="address" rows="1">{{ donor.address }}</textarea>
+        </div>
+     
+        <button type="submit" class="btn btn-primary">Update Donor</button>
+    </form>
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+{% endblock %}

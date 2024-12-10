@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <!-- External CSS links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='reg.css') }}"> <!-- Link to your custom CSS -->
+</head>
+<body>
+    <section class="container">
+           <h1>PlasmaConnect</h1>
+        <h3>Donor Registration Form</h3>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form class="form" method="POST" action="/register">
+            <div class="input-box">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="phno">Phone Number:</label>
+                <input type="text" id="phno" name="phno" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="blood_group">Blood Group:</label>
+                <select id="blood_group" name="blood_group" class="login__input" required>
+                    <option value="">Select...</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            
+            <div class="input-box">
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" class="login__input">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="input-box">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" class="login__input" required>
+            </div>
+            
+            <div class="input-box">
+                <label for="address">Address:</label> <br>
+                <textarea id="address" name="address" class="login__input" rows="1" required></textarea>
+            </div>
+            
+            <button id="button">Register</button>
+            <div class="signupContainer">
+                <p>Already Signed Up?</p>
+                <a href="/login">Login</a>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

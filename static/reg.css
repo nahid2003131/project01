@@ -1,0 +1,167 @@
+/* Styles from previous CSS */
+/* Additional or overriding styles specific to your donor registration form can go here */
+body {
+    font-family: "Poppins", sans-serif; 
+    background-color: #000;/* Adjusting font-family to match */
+}
+/* You may add more specific styles if needed */
+.container {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    background: #FCEDDA;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the form */
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #080808, #8118ea);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #080808, #f30c0c);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    
+  }
+  
+  .container header {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px; /* Add space below header */
+  }
+  
+  .form .input-box {
+    margin-bottom: 15px; /* Add space between input boxes */
+  }
+  
+  .input-box label {
+    color: #000;
+  }
+  
+  .form .input-box input[type="text"],
+  .form .input-box input[type="password"],
+  .form .input-box input[type="email"],
+  .form .input-box input[type="tel"],
+  .form .input-box select,
+  .form .input-box textarea {
+    width: 50%;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 1rem;
+    color: #808080;
+    border: 1px solid #EE4E34;
+    border-radius: 6px;
+    background: #FCEDDA;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .form .input-box input:focus,
+  .form .input-box select:focus,
+  .form .input-box textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(238, 78, 52, 0.8);
+  }
+  
+  .form .input-box textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+  }
+  
+  .form .column {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items within column */
+  }
+  
+  .form .input-box + .input-box {
+    margin-left: 10px; /* Adjust spacing between input boxes */
+  }
+  
+  .form button.login__button {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #EE4E34;
+  }
+  
+  .form button.login__button:hover {
+    background-color: #EE3E34;
+  }
+  #button {
+    position: relative;
+    width: 100%;
+    border: 2px solid #8000ff;
+    background-color: #8000ff;
+    height: 40px;
+    color: white;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  #button::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.253);
+    height: 100%;
+    width: 150px;
+    top: 0;
+    left: -200px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    filter: blur(10px);
+    transition-duration: .5s;
+  }
+  
+  #button:hover::after {
+    transform: translateX(600px);
+    transition-duration: .5s;
+  }
+  
+  .signupContainer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .signupContainer p {
+    font-size: .9em;
+    font-weight: 500;
+    color: rgb(9, 1, 1);
+  }
+  
+  .signupContainer a {
+    font-size: .7em;
+    font-weight: 500;
+    background-color: #2e2e2e;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+  }

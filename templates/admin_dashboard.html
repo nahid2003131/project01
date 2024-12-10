@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h3>Donor's Management</h3>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+            </div>
+        </section>
+        <section class="table__body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Blood Group</th>
+                        <th>Last Donation</th>
+                        <th>Weight</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donor in tasks %}
+                    <tr>
+                        <td>{{ donor.email }}</td>
+                        <td>{{ donor.phno }}</td>
+                        <td>{{ donor.blood_group }}</td>
+                        <td>{{ donor.last_donated }}</td>
+                        <td>{{ donor.weight }}</td>
+                        <td>{{ donor.gender }}</td>
+                        <td>{{ donor.address }}</td>
+                        <td>
+                            <a href="/edit_donor/{{ donor.sno }}"><img src="{{ url_for('static', filename='images/edit.gif') }}" alt="Edit Donor" style="width: 20px; height: 20px;"></a>
+                            <a href="/delete_donor/{{ donor.sno }}"><img src="{{ url_for('static', filename='images/deleteEm.gif') }}" alt="Delete Donor" style="width: 20px; height: 20px;"></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+{% endblock %}
